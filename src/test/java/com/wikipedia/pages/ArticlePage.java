@@ -54,6 +54,7 @@ public class ArticlePage {
 	public void navigateToExternalLinks() {
 		jse.executeScript("arguments[0].scrollIntoView(true);", externalArticlesHdr);
 	}
+	
 	/**
 	 * Validates an artist's albums according to  by inputting the it into the top search box.
 	 * @param article
@@ -64,6 +65,10 @@ public class ArticlePage {
 		}
 	}
 	
+	/**
+	 * Navigates to 'External links' section, and hovers over a given albumName
+	 * @param albumName
+	 */
 	public void hoverOverAlbumLink(String albumName) {
 		navigateToExternalLinks();
 		WebElement albumNameLink = this.studioAlbumsValue.findElement(By.linkText(albumName));
@@ -71,6 +76,10 @@ public class ArticlePage {
 		builder.moveToElement(albumNameLink).perform();
 	}
 	
+	/**
+	 * Validates hover message contains a given message as a substring.
+	 * @param message
+	 */
 	public void validateHoverMessagePresent(String message) {
 		String hoverMsgXpath = "//*[@id='mwe-popups-svg']/following-sibling::div[contains(@class, 'mwe-popups')]";
 		WebElement albumElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(hoverMsgXpath)));

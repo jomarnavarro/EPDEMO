@@ -18,7 +18,7 @@ public class HomePage {
 	public WebDriverWait wait;
 
 	/**
-	 * Constructs a new HomePage object, using the driver created in <class>tests.BaseTest</class>
+	 * Constructs a new HomePage object, using the driver created in <class>skeleton.StepDefs</class>
 	 * It also initializes its web elements by using the PageFactory method, pointing to all elements
 	 * defined in this very class.
 	 * @param driver WebDriver used to run the tests.
